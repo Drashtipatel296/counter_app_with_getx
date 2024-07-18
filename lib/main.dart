@@ -1,8 +1,6 @@
-import 'package:counter_app_with_getx/view/change_theme.dart';
-import 'package:counter_app_with_getx/view/navigation_screen.dart';
+import 'package:counter_app_with_getx/view/counter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'controller/theme_controller.dart';
 
 void main(){
@@ -18,12 +16,8 @@ class MyApp extends StatelessWidget {
     return Obx(() {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const ChangeTheme(),
+        home: const CounterScreen(),
         theme: themeController.isDark.value ? ThemeData.dark() : ThemeData.light(),
-        getPages: [
-          GetPage(name: '/first', page: () => const NavigationScreen(),),
-          GetPage(name: '/second', page: () => const SecondScreen(),transition: Transition.zoom),
-        ],
       );
     });
   }
